@@ -1,0 +1,131 @@
+*{margin:0;padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;}
+.cart-table{
+    width:100%;
+    border-collapse: collapse;
+}
+.cart-table th{
+    background:#999;
+    color:#fff;
+    height:50px;
+    line-height:50px;
+}
+.cart-table .th1{
+    width:10%;
+}
+.cart-table .th5{
+    width:50%;
+}
+.cart-table  td{
+    padding:10px 0;
+    position: relative;
+}
+.cart-table tbody .ui-chose-radio{
+    float: left;
+}
+
+/*单选框*/
+.ui-chose-radio{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+.ui-chose-radio span{
+    display: block;
+    width:23px;
+    height:23px;
+    border:1px solid #ccc;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    text-align: center;
+    overflow:hidden;
+}
+.ui-chose-radio.active span{
+    background:#ff0000;
+    border-color:#f00;
+}
+.ui-chose-radio.active span:after{
+    content:'✓';
+    color:#fff;
+    font-weight: bold;
+}
+.cart-table  tbody tr{
+    border-bottom:1px solid #ccc;
+}
+
+.cart-table .cart-img-wrapper{
+    width:100px;
+    height:100px;
+    float: left;
+    margin:0 15px 0 48px;
+}
+.cart-table .cart-img-wrapper img{
+    width:100%;
+}
+.cart-table .cart-detail{
+    height:100px;
+    position: relative;
+}
+.cart-detail .cart-send{
+    position: absolute;
+    left:163px;
+    bottom:0;
+    font-size:12px;
+}
+.cart-detail .cart-send dt,.cart-detail .cart-send dd{
+    display: inline-block;
+}
+.cart-detail .cart-send dd{
+    color:#999;
+}
+.align-center{
+     text-align: center;
+ }
+.align-right{
+    text-align: right;
+}
+.cart-table .cart-tips{
+    font-size:12px;
+    color:#999;
+}
+/*数量控件*/
+.ui-input-group{
+    font-size:0;
+}
+.ui-input-group ::selection{
+    background:transparent;
+}
+.ui-input-group .input-btn{
+    display: inline-block;
+    padding:0 5px;
+    font-size:14px;
+    cursor: pointer;
+}
+.ui-input-group input{
+    width:20px;
+    text-align: center;
+}
+.cart-table .item-total-price{
+    color:#ff0000;
+}
+.cart-table .chose-all-btn{
+    margin-left:48px;
+    cursor:pointer;
+}
+.cart-table .cart-total-wrapper{
+    display: inline-block;
+}
+.cart-table .cart-btn{
+    padding:6px 30px;
+    text-decoration: none;
+}
+.cart-table .cart-btn-submit{
+    background: #ff0000;
+    color:#fff;
+    margin-right:15px;
+}

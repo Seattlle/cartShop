@@ -1,0 +1,30 @@
+{
+  "status":1,
+  "result":{
+    "totalMoney":59,
+    "list":[
+      {
+        "productId":"2017043001",
+        "productName":"黄鹤楼1",
+        "productPrice":19,
+        "productNum":1,
+        "productImage":"image/cartImg.png",
+        "parts":[
+          {
+            "partsId":"1001",
+            "partsName":"打火机"
+          }
+        ]
+      }, {
+        "productId":"2017043001",
+        "productName":"黄鹤楼2",
+        "productPrice":58,
+        "productNum":1,
+        "productImage":"image/cartImg.png",
+        "parts":[
+
+        ]
+      }
+    ]
+  }
+}

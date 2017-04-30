@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+<body>
+    <div id="app">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th class="th5">商品信息</th>
+                    <th class="th1">商品单价</th>
+                    <th class="th1">商品数量</th>
+                    <th class="th1">总金额</th>
+                    <th class="th1">编辑</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in productList">
+                    <td>
+                        <div class="cart-img-wrapper">
+                            <img v-bind:src="item.productImage" >
+                        </div>
+                        <div class="cart-detail">
+                            <span class="cart-name">{{item.productName}}</span>
+                            <dl class="cart-send" v-if="item.parts.length>0">
+                                <dt>赠送：</dt>
+                                <dd v-for="part in item.parts" v-text="part.partsName"></dd>
+                            </dl>
+                        </div>
+                        <div class="ui-chose-radio" v-bind:class="{'active':item.checked}" v-on:click="selectedProduct(item)">
+                             <span></span>
+                         </div>
+                    </td>
+                    <td class="align-center">
+                        <span class="single-price">{{item.productPrice | doubleMoney}}</span>
+                    </td>
+                    <td class="align-center">
+                        <div class="ui-input-group">
+                            <span class="input-btn" v-on:click="consuleNum(-1,item)">-</span>
+                            <input type="text" v-model="item.productNum" disabled>
+                            <span class="input-btn" v-on:click="consuleNum(1,item)">+</span>
+                        </div>
+                        <p class="cart-tips">有货</p>
+                    </td>
+                    <td class="align-center">
+                        <span class="item-total-price">{{item.productPrice*item.productNum | doubleMoney}}</span>
+                    </td>
+                    <td class="align-center">
+                        <a href="javascript:;" class="cart-btn-del" v-on:click="delProduct(item)">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <div class="ui-chose-radio" v-bind:class="{'active':choseAll}" v-on:click="choseAllFun"><span></span></div>
+                        <span class="chose-all-btn" v-on:click="choseAllFun">全选</span>
+                    </td>
+                    <td colspan="4" class="align-right">
+                        <div class="cart-total-wrapper">
+                            <span>总金额：</span>
+                            <span>{{totalMoney | doubleMoney}}</span>
+                        </div>
+                        <a href="javascript:;" class="cart-btn cart-btn-submit">提交</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-resource/dist/vue-resource.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>
