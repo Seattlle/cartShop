@@ -1,0 +1,117 @@
+*{margin:0;padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.order-title ul,.order-title li{
+    list-style: none;
+}
+.order-title ul{
+    display: flex;
+}
+.order-title .order-title-item{
+    flex:1;
+    text-align: center;
+    height:50px;
+    line-height:50px;
+    border-bottom:2px solid #999;
+    position: relative;
+}
+.order-title .order-title-item:after{
+    content:'';
+    display: inline-block;
+    background-color:#999;
+    -webkit-border-radius:50%;;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    padding:6px;
+    position: absolute;
+    bottom:-6px;
+    left:50%;
+    margin-left:-6px;
+}
+.order-title .order-title-item.active{
+    border-color:#f27b26;
+    color:#f27b26;
+}
+.order-title .order-title-item.active:after{
+    background-color:#f27b26;
+}
+
+.address-list-title{
+    display: block;
+    text-align: center;
+    height:100px;
+    line-height:100px;
+    position: relative;
+}
+.address-list-title span:before,.address-list-title span:after{
+    content:'';
+    height:1px;
+    background:#999;
+    position: absolute;
+    top:50%;
+    width:45%;
+}
+.address-list-title span:before{
+     left:0;
+ }
+.address-list-title span:after{
+    right:0;
+}
+.address-list-wrapper ul,.address-list-wrapper li{
+    list-style:none;
+}
+.address-list-wrapper ul{
+    font-size:0;
+}
+.address-list-wrapper .address-list-item{
+    display: inline-block;
+    width:25%;
+    padding:0 10px;
+    font-size:14px;
+    margin-bottom: 10px;
+}
+.address-list-item .address-item-wrapper{
+    border:2px solid #ccc;
+    padding:10px;
+    position: relative;
+}
+.address-list-item .address-detail{
+    height:40px;
+    line-height: 20px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.address-list-item .address-default,.address-list-item .set-default{
+    color:#f27b26;
+}
+.address-list-item .set-default{
+    text-decoration: none;
+    visibility:hidden;
+    cursor:pointer;
+}
+.address-list-item .address-btn{
+    position: absolute;
+    text-decoration: none;
+    cursor:pointer;
+    position: absolute;
+    right:10px;
+    visibility:hidden;
+}
+.address-list-item .address-edit{
+    top:10px;
+}
+.address-list-item .address-del{
+    bottom:10px;
+}
+.address-list-item .address-item-wrapper:hover,.address-list-item.active .address-item-wrapper{
+    border-color:#f27b26;
+}
+.address-list-item .address-item-wrapper:hover .set-default{
+    visibility: visible;
+}
+.address-list-item .address-item-wrapper:hover .address-btn{
+    visibility: visible;
+}

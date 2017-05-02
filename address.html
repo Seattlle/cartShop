@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址选择</title>
+    <link rel="stylesheet" href="css/address.css">
+</head>
+<body>
+    <div id="app">
+        <section class="order-title">
+            <ul>
+                <li class="order-title-item active">地址确认</li>
+                <li class="order-title-item">查看订单</li>
+                <li class="order-title-item">支付</li>
+                <li class="order-title-item">订单确认</li>
+            </ul>
+        </section>
+        <section class="address-list">
+            <div class="address-list-title">
+                <span>配送地址</span>
+            </div>
+            <div class="address-list-wrapper">
+                <ul>
+                    <li class="address-list-item" v-for="(item,index) in addressList" v-bind:class="{'active':item.selected}" v-on:click="chose(item)">
+                        <div class="address-item-wrapper">
+                            <h3 class="address-name" v-text="item.name"></h3>
+                            <p class="address-detail" v-text="item.address"></p>
+                            <p class="address-phone" v-text="item.phone"></p>
+                            <p class="address-default" v-if="item.isDefault">默认地址</p>
+                            <a class="set-default" v-if="!item.isDefault" v-on:click.stop="setDetault(item)">设为默认</a>
+                            <a class="address-btn address-edit">编辑</a>
+                            <a class="address-btn address-del" v-on:click="del(index)">删除</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-resource/dist/vue-resource.js"></script>
+    <script src="./js/address.js"></script>
+</body>
+</html>
